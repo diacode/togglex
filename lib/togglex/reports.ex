@@ -12,6 +12,7 @@ defmodule Togglex.Reports do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/reports/weekly.md
   """
+  @spec weekly(Client.t, [{atom, binary}] | []) :: Togglex.response
   def weekly(client, params \\ []) do
     get("weekly", client, params)
   end
@@ -26,6 +27,7 @@ defmodule Togglex.Reports do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/reports/detailed.md
   """
+  @spec detailed(Client.t, [{atom, binary}] | []) :: Togglex.response
   def detailed(client, params \\ []) do
     get("details", client, params)
   end
@@ -39,6 +41,7 @@ defmodule Togglex.Reports do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/reports/summary.md
   """
+  @spec summary(Client.t, [{atom, binary}] | []) :: Togglex.response
   def summary(client, params \\ []) do
     get("summary", client, params)
   end
@@ -53,6 +56,7 @@ defmodule Togglex.Reports do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/reports/project.md
   """
+  @spec project(Client.t, [{atom, binary}] | []) :: Togglex.response
   def project(client, params \\ []) do
     get("project", client, params)
   end
