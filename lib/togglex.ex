@@ -13,7 +13,7 @@ defmodule Togglex do
 
   def get(path, client, params \\ []) do
     initial_url = url(client, path)
-    url = add_params_to_url(initial_url, params)
+    url = add_params_to_url(initial_url, Map.put(params, "user_agent", "togglex"))
     _request(:get, url, client.auth)
   end
 
