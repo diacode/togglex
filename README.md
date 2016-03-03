@@ -108,7 +108,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
 ### Reports API
 
-* [ ] Weekly report
-* [ ] Detailed report
-* [ ] Summary report
-* [ ] Project dashboard
+* [x] Weekly report
+* [x] Detailed report
+* [x] Summary report
+* [x] Project dashboard
