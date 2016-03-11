@@ -41,7 +41,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   * [ ] get client details
   * [ ] update a client
   * [ ] get clients visible to user
-  * [ ] get client projects
+  * [ ] get client projects
 
 * Projects
   * [ ] create a project
@@ -66,12 +66,12 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   * [ ] delete a tag
 
 * Tasks (available only for pro workspaces)
-  * [ ] create a task
-  * [ ] get task details
-  * [ ] update a task
-  * [ ] delete a task
-  * [ ] update multiple tasks
-  * [ ] delete multiple tasks
+  * [ ] create a task
+  * [ ] get task details
+  * [ ] update a task
+  * [ ] delete a task
+  * [ ] update multiple tasks
+  * [ ] delete multiple tasks
 
 * Time entries
   * [ ] create a time entry
@@ -108,7 +108,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
 ### Reports API
 
-* [ ] Weekly report
-* [ ] Detailed report
-* [ ] Summary report
-* [ ] Project dashboard
+* [x] Weekly report
+* [x] Detailed report
+* [x] Summary report
+* [x] Project dashboard
