@@ -17,6 +17,20 @@ defmodule Togglex.Api.Workspace do
   end
 
   @doc """
+  Returns the data of a specific workspace where the token owner should belong to
+
+  ## Example
+
+    Togglex.Api.Workspace.workspace(client, 123456)
+
+  More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-single-workspace
+  """
+  @spec workspace(Client.t, integer | binary) :: Togglex.Response
+  def workspace(client, workspace_id) do
+    get("workspaces/#{workspace_id}", client, [])
+  end
+
+  @doc """
   Returns all users contained in a specific workspace. To get a successful
   response, the token owner must be workspace admin
 
@@ -73,5 +87,25 @@ defmodule Togglex.Api.Workspace do
   @spec tags(Client.t, integer | binary) :: Togglex.Response
   def tags(client, workspace_id) do
     get("workspaces/#{workspace_id}/tags", client, [])
+  end
+
+  @doc """
+  Returns all unfinished tasks contained in a specific workspace. Available only
+  for pro workspaces To get a successful response, the token owner must be
+  workspace admin.
+
+  To filter tasks by their state you can add the additional param:
+
+  active: possible values true/false/both. By default true. If false, only done tasks are returned
+
+  ## Example
+
+    Togglex.Api.Workspace.tasks(client, 123456, %{"active" => "both"})
+
+  More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-workspace-tags
+  """
+  @spec tasks(Client.t, integer | binary, [{atom, binary}]) :: Togglex.Response
+  def tasks(client, workspace_id, params \\ []) do
+    get("workspaces/#{workspace_id}/tasks", client, params)
   end
 end
