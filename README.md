@@ -90,12 +90,14 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   * [ ] sign up new user
 
 * Workspaces
-  * [ ] get user workspaces
-  * [ ] get workspace users
+  * [x] get user workspaces
+  * [x] get single workspace
+  * [x] get workspace users
   * [x] get workspace clients
   * [x] get workspace projects
-  * [ ] get workspace tasks
-  * [ ] get workspace tags
+  * [x] get workspace tasks
+  * [x] get workspace tags
+  * [ ] update workspace
 
 * Workspace users
   * [ ] invite users to workspace
