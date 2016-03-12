@@ -60,4 +60,18 @@ defmodule Togglex.Api.Workspace do
   def projects(client, workspace_id, params \\ []) do
     get("workspaces/#{workspace_id}/projects", client, params)
   end
+
+  @doc """
+  Returns all tags contained in a specific workspace.
+
+  ## Example
+
+    Togglex.Api.Workspace.tags(client, 123456)
+
+  More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-workspace-tags
+  """
+  @spec tags(Client.t, integer | binary) :: Togglex.Response
+  def tags(client, workspace_id) do
+    get("workspaces/#{workspace_id}/tags", client, [])
+  end
 end
