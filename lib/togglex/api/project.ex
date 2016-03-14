@@ -1,6 +1,6 @@
 defmodule Togglex.Api.Project do
   import Togglex
-  alias Togglex.Api.Client
+  alias Togglex.Client
 
   def create do
   end

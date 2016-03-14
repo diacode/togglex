@@ -1,6 +1,6 @@
 defmodule Togglex.Reports do
   import Togglex
-  alias Togglex.Reports.Client
+  alias Togglex.Client
 
   @doc """
   The weekly report gives aggregated 7 day durations or earnings grouped by

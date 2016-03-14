@@ -1,7 +1,6 @@
 defmodule Togglex do
   use HTTPoison.Base
-  alias Togglex.Api.Client, as: ApiClient
-  alias Togglex.Reports.Client, as: ReportsClient
+  alias Togglex.Client
 
   @user_agent [{"User-agent", "togglex"}]
   @type response :: nil | {integer, any} | Poison.Parser.t
@@ -12,25 +11,25 @@ defmodule Togglex do
   def process_response(%HTTPoison.Response{status_code: status_code, body: ""}), do: { status_code, nil }
   def process_response(%HTTPoison.Response{status_code: status_code, body: body }), do: { status_code, Poison.decode!(body, keys: :atoms) }
 
-  @spec get(binary, ApiClient.t | ReportsClient.t, [{atom, binary}] | []) :: response
+  @spec get(binary, Client.t, [{atom, binary}] | []) :: response
   def get(path, client, params \\ []) do
     initial_url = url(client, path)
     url = add_params_to_url(initial_url, Enum.concat(params, [{"user_agent", "togglex"}]))
     _request(:get, url, client.auth)
   end
 
-  @spec _request(atom, binary, ApiClient.auth | ReportsClient.auth, binary) :: response
+  @spec _request(atom, binary, Client.auth, binary) :: response
   def _request(method, url, auth, body \\ "") do
     request!(method, url, body, authorization_header(auth, @user_agent)) |> process_response
   end
 
-  @spec authorization_header(ApiClient.auth | ReportsClient.auth, list) :: list
+  @spec authorization_header(Client.auth, list) :: list
   def authorization_header(%{access_token: token}, headers) do
     encoded = Base.encode64("#{token}:api_token")
     headers ++ [{"Authorization", "Basic #{encoded}"}]
   end
 
-  @spec url(ApiClient.t | ReportsClient.t, binary) :: binary
+  @spec url(Client.t, binary) :: binary
   defp url(%{endpoint: endpoint}, path) do
     endpoint <> "/" <> path
   end

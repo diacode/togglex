@@ -1,6 +1,6 @@
 defmodule Togglex.Api.Workspace do
   import Togglex
-  alias Togglex.Api.Client
+  alias Togglex.Client
 
   @doc """
   Returns all the workspaces where the token owner belongs to
