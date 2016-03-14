@@ -45,10 +45,10 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   * [x] get client projects
 
 * Projects
-  * [ ] create a project
+  * [x] create a project
   * [x] get project data
-  * [ ] update project data
-  * [ ] delete a project
+  * [x] update project data
+  * [x] delete a project
   * [x] get project users
   * [x] get project tasks
   * [ ] delete multiple projects
