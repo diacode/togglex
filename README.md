@@ -62,9 +62,9 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   * [ ] delete multiple project users
 
 * Tags
-  * [ ] create a tag
-  * [ ] update a tag
-  * [ ] delete a tag
+  * [x] create a tag
+  * [x] update a tag
+  * [x] delete a tag
 
 * Tasks (available only for pro workspaces)
   * [ ] create a task
