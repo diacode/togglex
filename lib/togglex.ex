@@ -28,6 +28,10 @@ defmodule Togglex do
     _request(:get, url, client.auth)
   end
 
+  def delete(path, client, body \\ "") do
+    _request(:delete, url(client, path), client.auth, body)
+  end
+
   def _request(method, url, auth, body \\ "") do
     json_request(method, url, body, authorization_header(auth, @user_agent))
   end
