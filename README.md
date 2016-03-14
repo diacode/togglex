@@ -76,8 +76,8 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
 * Time entries
   * [ ] create a time entry
-  * [ ] start a time entry
-  * [ ] stop a time entry
+  * [x] start a time entry
+  * [x] stop a time entry
   * [x] get time entry details
   * [x] get running time entry
   * [ ] update time entry
