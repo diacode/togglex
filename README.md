@@ -38,10 +38,10 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
 * Clients
   * [ ] create a client
-  * [ ] get client details
+  * [x] get client details
   * [ ] update a client
-  * [ ] get clients visible to user
-  * [ ] get client projects
+  * [x] get clients visible to user
+  * [x] get client projects
 
 * Projects
   * [ ] create a project
