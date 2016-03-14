@@ -88,10 +88,41 @@ defmodule Togglex.Api.TimeEntry do
     get("time_entries", client, params)
   end
 
-  def start do
+  @doc """
+    Start a time entry.
+
+    Time entry data example:
+
+    ```
+    %{
+      "description" => "Nice description",
+      "pid" => "111111",
+      "tags" => ["billed"]
+    }
+    ```
+    ## Example
+
+      Togglex.TimeEntry.start(client, time_entry_data)
+
+    More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#stop-a-time-entry
+  """
+  @spec start(Client.t, list | map) :: Togglex.Response
+  def start(client, time_entry_data) do
+    body = %{time_entry: Dict.merge(time_entry_data, created_with: "togglex")}
+    post("time_entries/start", client, body)
   end
 
-  def stop do
-  end
+  @doc """
+    Stop a time entry.
 
+    ## Example
+
+      Togglex.TimeEntry.stop(client, "111111")
+
+    More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#stop-a-time-entry
+  """
+  @spec stop(Client.t, binary | integer) :: Togglex.Response
+  def stop(client, time_entry_id) do
+    put("time_entries/#{time_entry_id}/stop", client)
+  end
 end
