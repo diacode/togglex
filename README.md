@@ -78,10 +78,11 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   * [ ] create a time entry
   * [ ] start a time entry
   * [ ] stop a time entry
-  * [ ] get time entry details
+  * [x] get time entry details
+  * [x] get running time entry
   * [ ] update time entry
   * [ ] delete time entry
-  * [ ] get time entries started in a specific time range
+  * [x] get time entries started in a specific time range
   * [ ] bulk update time entries tags
 
 * Users
