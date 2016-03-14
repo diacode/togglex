@@ -2,13 +2,46 @@ defmodule Togglex.Api.Client do
   import Togglex
   alias Togglex.Client
 
-  def create do
+  @doc """
+  Creates a client in a specific workspace.
+
+  ## Example
+
+    Togglex.Api.Client.create(client, %{name: "John Doe", wid: "111111"})
+
+  More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#create-a-client
+  """
+  @spec create(Client.t, map) :: Togglex.Response
+  def create(http_client, client_data) do
+    post("clients", http_client, %{client: client_data})
   end
 
-  def update do
+  @doc """
+  Updates an existing client. Workspace id (wid) can't be changed.
+
+  ## Example
+
+    Togglex.Api.Client.update(client, "111111", %{name: "Jane Doe", notes: "Best customer of all time"})
+
+  More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#update-a-client
+  """
+  @spec update(Client.t, integer | binary, map) :: Togglex.Response
+  def update(http_client, client_id, client_data) do
+    put("clients/#{client_id}", http_client, %{client: client_data})
   end
 
-  def delete do
+  @doc """
+  Deletes an existing client.
+
+  ## Example
+
+    Togglex.Api.Client.delete(client, "111111")
+
+  More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#delete-a-client
+  """
+  @spec delete(Client.t, integer | binary) :: Togglex.Response
+  def delete(http_client, client_id) do
+    Togglex.delete("clients/#{client_id}", http_client)
   end
 
   @doc """

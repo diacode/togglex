@@ -37,10 +37,10 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   * [ ] Destroy the session
 
 * Clients
-  * [ ] create a client
+  * [x] create a client
   * [x] get client details
-  * [ ] update a client
-  * [ ] delete a client
+  * [x] update a client
+  * [x] delete a client
   * [x] get clients visible to user
   * [x] get client projects
 
