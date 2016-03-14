@@ -40,6 +40,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   * [ ] create a client
   * [x] get client details
   * [ ] update a client
+  * [ ] delete a client
   * [x] get clients visible to user
   * [x] get client projects
 
