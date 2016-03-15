@@ -2,6 +2,10 @@ defmodule Togglex.Api.Workspaces do
   import Togglex
   alias Togglex.Client
 
+  @moduledoc """
+  Provides functions to work with Toggl Workspace resources.
+  """
+
   @doc """
   Returns all the workspaces where the token owner belongs to
 

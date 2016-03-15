@@ -2,6 +2,11 @@ defmodule Togglex do
   use HTTPoison.Base
   alias Togglex.Client
 
+  @moduledoc """
+  Provides multiple functions to make http requests using either of the methods
+  GET, POST, PUT or DELETE.
+  """
+
   @user_agent [{"User-agent", "togglex"}]
   @type response :: nil | {integer, any} | Poison.Parser.t
 

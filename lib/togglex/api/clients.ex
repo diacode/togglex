@@ -2,6 +2,10 @@ defmodule Togglex.Api.Clients do
   import Togglex
   alias Togglex.Client
 
+  @moduledoc """
+  Provides functions to work with Toggl Client resources.
+  """
+
   @doc """
   Creates a client in a specific workspace.
 

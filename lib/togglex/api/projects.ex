@@ -2,6 +2,10 @@ defmodule Togglex.Api.Projects do
   import Togglex
   alias Togglex.Client
 
+  @moduledoc """
+  Provides functions to work with Toggl Project resources.
+  """
+
   @doc """
   Creates a project in a specific workspace.
 

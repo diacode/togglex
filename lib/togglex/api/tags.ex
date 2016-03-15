@@ -2,6 +2,10 @@ defmodule Togglex.Api.Tags do
   import Togglex
   alias Togglex.Client
 
+  @moduledoc """
+  Provides functions to work with Toggl Tag resources.
+  """
+
   @doc """
   Creates a new tag in a workspace.
 

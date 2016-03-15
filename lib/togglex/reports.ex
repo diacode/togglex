@@ -2,6 +2,10 @@ defmodule Togglex.Reports do
   import Togglex
   alias Togglex.Client
 
+  @moduledoc """
+  Provides some functions to get Toggl reports.
+  """
+
   @doc """
   The weekly report gives aggregated 7 day durations or earnings grouped by
   users and projects.

@@ -2,6 +2,10 @@ defmodule Togglex.Api.TimeEntries do
   import Togglex
   alias Togglex.Client
 
+  @moduledoc """
+  Provides functions to work with Toggl Time Entry resources.
+  """
+
   @doc """
     Creates a time entry.
 

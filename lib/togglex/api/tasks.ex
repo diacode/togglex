@@ -2,6 +2,10 @@ defmodule Togglex.Api.Tasks do
   import Togglex
   alias Togglex.Client
 
+  @moduledoc """
+  Provides functions to work with Toggl Task resources.
+  """
+
   @doc """
     Creates a new Task.
 
