@@ -2,9 +2,8 @@
 
 Simple Elixir wrapper for the [Toggl API](https://github.com/toggl/toggl_api_docs).
 
-Based heavily on the [ExTracker](https://github.com/dashofcode/extracker),
-[Tentacat](https://github.com/edgurgel/tentacat) and
-[ExTwiter](https://github.com/parroty/extwitter) libraries.
+Heavily based on [ExTracker](https://github.com/dashofcode/extracker) and
+[Tentacat](https://github.com/edgurgel/tentacat).
 
 ## Installation
 
