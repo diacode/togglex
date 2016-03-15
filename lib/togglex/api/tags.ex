@@ -1,4 +1,4 @@
-defmodule Togglex.Api.Tag do
+defmodule Togglex.Api.Tags do
   import Togglex
   alias Togglex.Client
 
@@ -12,7 +12,7 @@ defmodule Togglex.Api.Tag do
 
   ## Example
 
-    Togglex.Api.Tag.create(client, %{name: "tagname", wid: "111111"})
+    Togglex.Api.Tags.create(client, %{name: "tagname", wid: "111111"})
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/tags.md#create-tag
   """
@@ -26,7 +26,7 @@ defmodule Togglex.Api.Tag do
 
   ## Example
 
-    Togglex.Api.Tag.update(client, "111111", %{name: "newtagname")
+    Togglex.Api.Tags.update(client, "111111", %{name: "newtagname")
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/tags.md#update-a-tag
   """
@@ -40,7 +40,7 @@ defmodule Togglex.Api.Tag do
 
   ## Example
 
-    Togglex.Api.Tag.delete(client, "111111")
+    Togglex.Api.Tags.delete(client, "111111")
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/tags.md#delete-a-tag
   """

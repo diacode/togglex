@@ -1,4 +1,4 @@
-defmodule Togglex.Api.TimeEntry do
+defmodule Togglex.Api.TimeEntries do
   import Togglex
   alias Togglex.Client
 
@@ -57,7 +57,7 @@ defmodule Togglex.Api.TimeEntry do
 
     ## Example
 
-      Togglex.Api.TimeEntry.bulk_update_tags(client, ["111111", "222222"], ["billed"], "add")
+      Togglex.Api.TimeEntries.bulk_update_tags(client, ["111111", "222222"], ["billed"], "add")
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#bulk-update-time-entries-tags
   """
@@ -70,7 +70,7 @@ defmodule Togglex.Api.TimeEntry do
 
     ## Example
 
-      Togglex.Api.TimeEntry.delete(client, "111111")
+      Togglex.Api.TimeEntries.delete(client, "111111")
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#delete-a-time-entry
   """
@@ -84,7 +84,7 @@ defmodule Togglex.Api.TimeEntry do
 
     ## Example
 
-      Togglex.Api.TimeEntry.time_entry(client, "111111")
+      Togglex.Api.TimeEntries.time_entry(client, "111111")
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#get-time-entry-details
   """
@@ -98,7 +98,7 @@ defmodule Togglex.Api.TimeEntry do
 
     ## Example
 
-      Togglex.Api.TimeEntry.current(client)
+      Togglex.Api.TimeEntries.current(client)
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#get-running-time-entry
   """

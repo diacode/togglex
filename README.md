@@ -46,7 +46,7 @@ client = Togglex.Client.new(%{access_token: "YOU_ACCESS_TOKEN"}, :api)
 Get workspace projects:
 
 ```elixir
-Togglex.Api.Workspace.projects(client, "YOUR_WORKSPACE_ID")
+Togglex.Api.Workspaces.projects(client, "YOUR_WORKSPACE_ID")
 ```
 
 ### Reports API examples

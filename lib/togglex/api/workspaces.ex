@@ -1,4 +1,4 @@
-defmodule Togglex.Api.Workspace do
+defmodule Togglex.Api.Workspaces do
   import Togglex
   alias Togglex.Client
 
@@ -7,7 +7,7 @@ defmodule Togglex.Api.Workspace do
 
   ## Example
 
-    Togglex.Api.Workspace.workspaces(client)
+    Togglex.Api.Workspaces.workspaces(client)
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-workspaces
   """
@@ -21,7 +21,7 @@ defmodule Togglex.Api.Workspace do
 
   ## Example
 
-    Togglex.Api.Workspace.workspace(client, 123456)
+    Togglex.Api.Workspaces.workspace(client, 123456)
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-single-workspace
   """
@@ -45,7 +45,7 @@ defmodule Togglex.Api.Workspace do
 
     ## Example
 
-      Togglex.Api.Workspace.update(client, "111111", workspace_data})
+      Togglex.Api.Workspaces.update(client, "111111", workspace_data})
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#update-workspace
   """
@@ -60,7 +60,7 @@ defmodule Togglex.Api.Workspace do
 
   ## Example
 
-    Togglex.Api.Workspace.users(client, 123456)
+    Togglex.Api.Workspaces.users(client, 123456)
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-workspace-users
   """
@@ -75,7 +75,7 @@ defmodule Togglex.Api.Workspace do
 
   ## Example
 
-    Togglex.Api.Workspace.clients(client, 123456)
+    Togglex.Api.Workspaces.clients(client, 123456)
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-workspace-clients
   """
@@ -90,7 +90,7 @@ defmodule Togglex.Api.Workspace do
 
   ## Example
 
-    Togglex.Api.Workspace.projects(client, 123456)
+    Togglex.Api.Workspaces.projects(client, 123456)
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-workspace-projects
   """
@@ -104,7 +104,7 @@ defmodule Togglex.Api.Workspace do
 
   ## Example
 
-    Togglex.Api.Workspace.tags(client, 123456)
+    Togglex.Api.Workspaces.tags(client, 123456)
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-workspace-tags
   """
@@ -124,7 +124,7 @@ defmodule Togglex.Api.Workspace do
 
   ## Example
 
-    Togglex.Api.Workspace.tasks(client, 123456, %{"active" => "both"})
+    Togglex.Api.Workspaces.tasks(client, 123456, %{"active" => "both"})
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-workspace-tags
   """

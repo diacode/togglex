@@ -1,4 +1,4 @@
-defmodule Togglex.Api.Task do
+defmodule Togglex.Api.Tasks do
   import Togglex
   alias Togglex.Client
 
@@ -17,7 +17,7 @@ defmodule Togglex.Api.Task do
 
     ## Example
 
-      Togglex.Api.Task.create(client, task_data)
+      Togglex.Api.Tasks.create(client, task_data)
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/tasks.md#create-a-task
   """
@@ -42,7 +42,7 @@ defmodule Togglex.Api.Task do
 
     ## Example
 
-      Togglex.Api.Task.update(client, "111111", task_data)
+      Togglex.Api.Tasks.update(client, "111111", task_data)
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/tasks.md#update-a-task
   """
@@ -56,7 +56,7 @@ defmodule Togglex.Api.Task do
 
     ## Example
 
-      Togglex.Api.Task.task(client, "111111")
+      Togglex.Api.Tasks.task(client, "111111")
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/tasks.md#get-task-details
   """
@@ -70,7 +70,7 @@ defmodule Togglex.Api.Task do
 
     ## Example
 
-      Togglex.Api.Task.delete(client, "111111")
+      Togglex.Api.Tasks.delete(client, "111111")
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/tasks.md#delete-a-task
   """

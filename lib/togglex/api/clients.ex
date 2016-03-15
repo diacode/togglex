@@ -1,4 +1,4 @@
-defmodule Togglex.Api.Client do
+defmodule Togglex.Api.Clients do
   import Togglex
   alias Togglex.Client
 
@@ -7,7 +7,7 @@ defmodule Togglex.Api.Client do
 
   ## Example
 
-    Togglex.Api.Client.create(client, %{name: "John Doe", wid: "111111"})
+    Togglex.Api.Clients.create(client, %{name: "John Doe", wid: "111111"})
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#create-a-client
   """
@@ -21,7 +21,7 @@ defmodule Togglex.Api.Client do
 
   ## Example
 
-    Togglex.Api.Client.update(client, "111111", %{name: "Jane Doe", notes: "Best customer of all time"})
+    Togglex.Api.Clients.update(client, "111111", %{name: "Jane Doe", notes: "Best customer of all time"})
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#update-a-client
   """
@@ -35,7 +35,7 @@ defmodule Togglex.Api.Client do
 
   ## Example
 
-    Togglex.Api.Client.delete(client, "111111")
+    Togglex.Api.Clients.delete(client, "111111")
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#delete-a-client
   """
@@ -49,7 +49,7 @@ defmodule Togglex.Api.Client do
 
   ## Example
 
-    Togglex.Api.Client.client(api_http_client, "111111")
+    Togglex.Api.Clients.client(api_http_client, "111111")
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#get-client-details
   """
@@ -64,7 +64,7 @@ defmodule Togglex.Api.Client do
 
   ## Example
 
-    Togglex.Api.Client.clients(api_http_client)
+    Togglex.Api.Clients.clients(api_http_client)
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#get-clients-visible-to-user
   """
@@ -78,7 +78,7 @@ defmodule Togglex.Api.Client do
 
   ## Example
 
-    Togglex.Api.Client.projects(api_http_client, "111111")
+    Togglex.Api.Clients.projects(api_http_client, "111111")
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#get-client-projects
   """

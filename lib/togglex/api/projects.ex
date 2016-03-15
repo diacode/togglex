@@ -1,4 +1,4 @@
-defmodule Togglex.Api.Project do
+defmodule Togglex.Api.Projects do
   import Togglex
   alias Togglex.Client
 
@@ -7,7 +7,7 @@ defmodule Togglex.Api.Project do
 
   ## Example
 
-    Togglex.Api.Project.create(client, %{name: "Test project", wid: "111111"})
+    Togglex.Api.Projects.create(client, %{name: "Test project", wid: "111111"})
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/projects.md#create-project
   """
@@ -21,7 +21,7 @@ defmodule Togglex.Api.Project do
 
   ## Example
 
-    Togglex.Api.Project.update(client, "111111", %{name: "Test project 2"})
+    Togglex.Api.Projects.update(client, "111111", %{name: "Test project 2"})
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/projects.md#update-project-data
   """
@@ -35,7 +35,7 @@ defmodule Togglex.Api.Project do
 
   ## Example
 
-    Togglex.Api.Project.delete(client, "111111")
+    Togglex.Api.Projects.delete(client, "111111")
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/projects.md#delete-a-project
   """
@@ -49,7 +49,7 @@ defmodule Togglex.Api.Project do
 
   ## Example
 
-    Togglex.Api.Project.project(client, "111111")
+    Togglex.Api.Projects.project(client, "111111")
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/projects.md#get-project-data
   """
@@ -63,7 +63,7 @@ defmodule Togglex.Api.Project do
 
   ## Example
 
-    Togglex.Api.Project.users(client, "111111")
+    Togglex.Api.Projects.users(client, "111111")
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/projects.md#get-project-users
   """
@@ -77,7 +77,7 @@ defmodule Togglex.Api.Project do
 
   ## Example
 
-    Togglex.Api.Project.tasks(client, "111111")
+    Togglex.Api.Projects.tasks(client, "111111")
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/projects.md#get-project-tasks
   """
