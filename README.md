@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/diacode/togglex.svg?branch=master)](https://travis-ci.org/diacode/togglex)
+[![Coverage Status](https://coveralls.io/repos/github/diacode/togglex/badge.svg?branch=master)](https://coveralls.io/github/diacode/togglex?branch=master)
 [![Inline docs](http://inch-ci.org/github/diacode/togglex.svg)](http://inch-ci.org/github/diacode/togglex)
 
 # Togglex
