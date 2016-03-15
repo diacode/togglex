@@ -2,14 +2,48 @@ defmodule Togglex.Api.TimeEntry do
   import Togglex
   alias Togglex.Client
 
-  def create do
-  end
+  @doc """
+    Creates a time entry.
 
-  def update do
+    Time entry data example:
+
+    ```
+    %{
+      description: "Mockup",
+      pid: "111111",
+      start: "2016-01-01T12:30:30+00:00",
+      duration: 3600
+    }
+    ```
+
+    ## Example
+
+      Toggl.Api.TimeEntry.create(client, time_entry_data)
+
+    More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#create-a-time-entry
+  """
+  @spec create(Client.t, map) :: Togglex.Response
+  def create(client, time_entry_data) do
+    body = %{time_entry: Dict.merge(time_entry_data, created_with: "togglex")}
+    post("time_entries", client, body)
   end
 
   @doc """
-    Bulk update time entries tags
+    Updates an existing time entry.
+
+    ## Example
+
+      Toggl.Api.TimeEntry.update(client, "111111", time_entry_data)
+
+    More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#update-a-time-entry
+  """
+  @spec update(Client.t, integer | binary, map) :: Togglex.Response
+  def update(client, time_entry_id, time_entry_data) do
+    put("time_entries/#{time_entry_id}", client, %{time_entry: time_entry_data})
+  end
+
+  @doc """
+    Bulk update time entries tags.
 
     You can mass assign and remove tags from time entries. Just instead of one
     time_entry_id, you need to send all the time entry ids, which you want to
@@ -31,7 +65,18 @@ defmodule Togglex.Api.TimeEntry do
   def bulk_update_tags(client, time_entry_ids, tags, tag_action) do
   end
 
-  def delete do
+  @doc """
+    Deletes an existing time entry.
+
+    ## Example
+
+      Togglex.Api.TimeEntry.delete(client, "111111")
+
+    More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#delete-a-time-entry
+  """
+  @spec delete(Client.t, integer | binary) :: Togglex.Response
+  def delete(client, time_entry_id) do
+    Togglex.delete("time_entries/#{time_entry_id}", client)
   end
 
   @doc """
@@ -100,6 +145,7 @@ defmodule Togglex.Api.TimeEntry do
       "tags" => ["billed"]
     }
     ```
+
     ## Example
 
       Togglex.TimeEntry.start(client, time_entry_data)

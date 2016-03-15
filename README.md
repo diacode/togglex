@@ -75,13 +75,13 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   * [ ] delete multiple tasks
 
 * Time entries
-  * [ ] create a time entry
+  * [x] create a time entry
   * [x] start a time entry
   * [x] stop a time entry
   * [x] get time entry details
   * [x] get running time entry
-  * [ ] update time entry
-  * [ ] delete time entry
+  * [x] update time entry
+  * [x] delete time entry
   * [x] get time entries started in a specific time range
   * [ ] bulk update time entries tags
 
