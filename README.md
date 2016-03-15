@@ -26,6 +26,52 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   end
   ```
 
+## Usage
+
+All calls to Toggl APIs must use a Client which contains the access token and
+the endpoint. The API is splitted in two different parts. The first one is
+called **Toggl API** which is essentially a RESTful API that you can use to
+create, update, delete and get most of the resources from Toggl service. On the
+other hand there is a read-only **Reports API** which you can use to obtain
+aggregated data based on more or less complex queries.
+
+### Toggl API examples
+
+Initializing the client for the Toggl API endpoint:
+
+```elixir
+client = Togglex.Client.new(%{access_token: "YOU_ACCESS_TOKEN"}, :api)
+```
+
+Get workspace projects:
+
+```elixir
+Togglex.Api.Workspace.projects(client, "YOUR_WORKSPACE_ID")
+```
+
+### Reports API examples
+
+Initializing the client for the Reports API endpoint:
+
+```elixir
+client = Togglex.Client.new(%{access_token: "YOU_ACCESS_TOKEN"}, :reports)
+```
+
+Getting a detailed report based on some parameters:
+
+```elixir
+Togglex.Reports.detailed(client, %{workspace_id: "YOUR_WORKSPACE_ID", project_ids: "COMMA_SEPARATED_PROJECT_IDS"})
+```
+
+Getting a summarized report based on some parameters:
+
+```elixir
+Togglex.Reports.summary(client, %{workspace_id: "YOUR_WORKSPACE_ID", project_ids: "COMMA_SEPARATED_PROJECT_IDS"})
+```
+
+Check out in the next section which API calls are already implemented in this
+wrapper.
+
 ## Features
 
 ### Toggl API
