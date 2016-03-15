@@ -11,7 +11,7 @@ defmodule Togglex.Api.Clients do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#create-a-client
   """
-  @spec create(Client.t, map) :: Togglex.Response
+  @spec create(Client.t, map) :: Togglex.response
   def create(http_client, client_data) do
     post("clients", http_client, %{client: client_data})
   end
@@ -25,7 +25,7 @@ defmodule Togglex.Api.Clients do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#update-a-client
   """
-  @spec update(Client.t, integer | binary, map) :: Togglex.Response
+  @spec update(Client.t, integer | binary, map) :: Togglex.response
   def update(http_client, client_id, client_data) do
     put("clients/#{client_id}", http_client, %{client: client_data})
   end
@@ -39,7 +39,7 @@ defmodule Togglex.Api.Clients do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#delete-a-client
   """
-  @spec delete(Client.t, integer | binary) :: Togglex.Response
+  @spec delete(Client.t, integer | binary) :: Togglex.response
   def delete(http_client, client_id) do
     Togglex.delete("clients/#{client_id}", http_client)
   end
@@ -53,7 +53,7 @@ defmodule Togglex.Api.Clients do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#get-client-details
   """
-  @spec find(Client.t, integer | binary) :: Togglex.Response
+  @spec find(Client.t, integer | binary) :: Togglex.response
   def find(http_client, client_id) do
     get("clients/#{client_id}", http_client, [])
   end
@@ -68,7 +68,7 @@ defmodule Togglex.Api.Clients do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#get-clients-visible-to-user
   """
-  @spec list(Client.t) :: Togglex.Response
+  @spec list(Client.t) :: Togglex.response
   def list(http_client) do
     get("clients", http_client)
   end
@@ -82,7 +82,7 @@ defmodule Togglex.Api.Clients do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#get-client-projects
   """
-  @spec projects(Client.t, integer | binary) :: Togglex.Response
+  @spec projects(Client.t, integer | binary) :: Togglex.response
   def projects(http_client, client_id) do
     get("clients/#{client_id}/projects", http_client, [])
   end

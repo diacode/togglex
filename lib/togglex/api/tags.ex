@@ -16,7 +16,7 @@ defmodule Togglex.Api.Tags do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/tags.md#create-tag
   """
-  @spec create(Client.t, map) :: Togglex.Response
+  @spec create(Client.t, map) :: Togglex.response
   def create(client, params) do
     post("tags", client, %{tag: params})
   end
@@ -30,7 +30,7 @@ defmodule Togglex.Api.Tags do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/tags.md#update-a-tag
   """
-  @spec update(Client.t, integer | binary, map) :: Togglex.Response
+  @spec update(Client.t, integer | binary, map) :: Togglex.response
   def update(client, tag_id, params) do
     put("tags/#{tag_id}", client, %{tag: params})
   end
@@ -44,7 +44,7 @@ defmodule Togglex.Api.Tags do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/tags.md#delete-a-tag
   """
-  @spec delete(Client.t, integer | binary) :: Togglex.Response
+  @spec delete(Client.t, integer | binary) :: Togglex.response
   def delete(client, tag_id) do
     Togglex.delete("tags/#{tag_id}", client)
   end

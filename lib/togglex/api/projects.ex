@@ -11,7 +11,7 @@ defmodule Togglex.Api.Projects do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/projects.md#create-project
   """
-  @spec create(Client.t, map) :: Togglex.Response
+  @spec create(Client.t, map) :: Togglex.response
   def create(client, project_data) do
     post("projects", client, %{project: project_data})
   end
@@ -25,7 +25,7 @@ defmodule Togglex.Api.Projects do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/projects.md#update-project-data
   """
-  @spec update(Client.t, integer | binary, map) :: Togglex.Response
+  @spec update(Client.t, integer | binary, map) :: Togglex.response
   def update(client, project_id, project_data) do
     put("projects/#{project_id}", client, %{project: project_data})
   end
@@ -39,7 +39,7 @@ defmodule Togglex.Api.Projects do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/projects.md#delete-a-project
   """
-  @spec delete(Client.t, integer | binary) :: Togglex.Response
+  @spec delete(Client.t, integer | binary) :: Togglex.response
   def delete(client, project_id) do
     Togglex.delete("projects/#{project_id}", client)
   end
@@ -53,7 +53,7 @@ defmodule Togglex.Api.Projects do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/projects.md#get-project-data
   """
-  @spec find(Client.t, integer | binary) :: Togglex.Response
+  @spec find(Client.t, integer | binary) :: Togglex.response
   def find(client, project_id) do
     get("projects/#{project_id}", client)
   end
@@ -67,7 +67,7 @@ defmodule Togglex.Api.Projects do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/projects.md#get-project-users
   """
-  @spec users(Client.t, integer | binary) :: Togglex.Response
+  @spec users(Client.t, integer | binary) :: Togglex.response
   def users(client, project_id) do
     get("projects/#{project_id}/project_users", client)
   end
@@ -81,7 +81,7 @@ defmodule Togglex.Api.Projects do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/projects.md#get-project-tasks
   """
-  @spec tasks(Client.t, integer | binary) :: Togglex.Response
+  @spec tasks(Client.t, integer | binary) :: Togglex.response
   def tasks(client, project_id) do
     get("projects/#{project_id}/tasks", client)
   end

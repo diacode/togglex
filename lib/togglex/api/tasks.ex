@@ -21,7 +21,7 @@ defmodule Togglex.Api.Tasks do
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/tasks.md#create-a-task
   """
-  @spec create(Client.t, map) :: Togglex.Response
+  @spec create(Client.t, map) :: Togglex.response
   def create(client, task_data) do
     post("tasks", client, %{task: task_data})
   end
@@ -46,7 +46,7 @@ defmodule Togglex.Api.Tasks do
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/tasks.md#update-a-task
   """
-  @spec update(Client.t, integer | binary, map) :: Togglex.Response
+  @spec update(Client.t, integer | binary, map) :: Togglex.response
   def update(client, task_id, task_data) do
     put("tasks/#{task_id}", client, %{task: task_data})
   end
@@ -60,7 +60,7 @@ defmodule Togglex.Api.Tasks do
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/tasks.md#get-task-details
   """
-  @spec find(Client.t, integer | binary) :: Togglex.Response
+  @spec find(Client.t, integer | binary) :: Togglex.response
   def find(client, task_id) do
     get("tasks/#{task_id}", client)
   end
@@ -74,7 +74,7 @@ defmodule Togglex.Api.Tasks do
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/tasks.md#delete-a-task
   """
-  @spec delete(Client.t, integer | binary) :: Togglex.Response
+  @spec delete(Client.t, integer | binary) :: Togglex.response
   def delete(client, task_id) do
     Togglex.delete("tasks/#{task_id}", client)
   end

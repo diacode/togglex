@@ -22,7 +22,7 @@ defmodule Togglex.Api.TimeEntries do
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#create-a-time-entry
   """
-  @spec create(Client.t, map) :: Togglex.Response
+  @spec create(Client.t, map) :: Togglex.response
   def create(client, time_entry_data) do
     body = %{time_entry: Dict.merge(time_entry_data, created_with: "togglex")}
     post("time_entries", client, body)
@@ -37,7 +37,7 @@ defmodule Togglex.Api.TimeEntries do
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#update-a-time-entry
   """
-  @spec update(Client.t, integer | binary, map) :: Togglex.Response
+  @spec update(Client.t, integer | binary, map) :: Togglex.response
   def update(client, time_entry_id, time_entry_data) do
     put("time_entries/#{time_entry_id}", client, %{time_entry: time_entry_data})
   end
@@ -61,7 +61,7 @@ defmodule Togglex.Api.TimeEntries do
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#bulk-update-time-entries-tags
   """
-  @spec bulk_update_tags(Client.t, [binary], [binary], binary) :: Togglex.Response
+  @spec bulk_update_tags(Client.t, [binary], [binary], binary) :: Togglex.response
   def bulk_update_tags(client, time_entry_ids, tags, tag_action) do
   end
 
@@ -74,7 +74,7 @@ defmodule Togglex.Api.TimeEntries do
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#delete-a-time-entry
   """
-  @spec delete(Client.t, integer | binary) :: Togglex.Response
+  @spec delete(Client.t, integer | binary) :: Togglex.response
   def delete(client, time_entry_id) do
     Togglex.delete("time_entries/#{time_entry_id}", client)
   end
@@ -88,7 +88,7 @@ defmodule Togglex.Api.TimeEntries do
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#get-time-entry-details
   """
-  @spec find(Client.t, integer | binary) :: Togglex.Response
+  @spec find(Client.t, integer | binary) :: Togglex.response
   def find(client, time_entry_id) do
     get("time_entries/#{time_entry_id}", client)
   end
@@ -102,7 +102,7 @@ defmodule Togglex.Api.TimeEntries do
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#get-running-time-entry
   """
-  @spec current(Client.t) :: Togglex.Response
+  @spec current(Client.t) :: Togglex.response
   def current(client) do
     get("time_entries/current", client)
   end
@@ -152,7 +152,7 @@ defmodule Togglex.Api.TimeEntries do
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#stop-a-time-entry
   """
-  @spec start(Client.t, list | map) :: Togglex.Response
+  @spec start(Client.t, list | map) :: Togglex.response
   def start(client, time_entry_data) do
     body = %{time_entry: Dict.merge(time_entry_data, created_with: "togglex")}
     post("time_entries/start", client, body)
@@ -167,7 +167,7 @@ defmodule Togglex.Api.TimeEntries do
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#stop-a-time-entry
   """
-  @spec stop(Client.t, binary | integer) :: Togglex.Response
+  @spec stop(Client.t, binary | integer) :: Togglex.response
   def stop(client, time_entry_id) do
     put("time_entries/#{time_entry_id}/stop", client)
   end

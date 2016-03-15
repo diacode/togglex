@@ -11,7 +11,7 @@ defmodule Togglex.Api.Workspaces do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-workspaces
   """
-  @spec list(Client.t) :: Togglex.Response
+  @spec list(Client.t) :: Togglex.response
   def list(client) do
     get("workspaces", client, [])
   end
@@ -25,7 +25,7 @@ defmodule Togglex.Api.Workspaces do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-single-workspace
   """
-  @spec find(Client.t, integer | binary) :: Togglex.Response
+  @spec find(Client.t, integer | binary) :: Togglex.response
   def find(client, workspace_id) do
     get("workspaces/#{workspace_id}", client, [])
   end
@@ -49,7 +49,7 @@ defmodule Togglex.Api.Workspaces do
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#update-workspace
   """
-  @spec update(Client.t, integer | binary, map) :: Togglex.Response
+  @spec update(Client.t, integer | binary, map) :: Togglex.response
   def update(client, workspace_id, workspace_data) do
     put("workspaces/#{workspace_id}", client, %{workspace: workspace_data})
   end
@@ -64,7 +64,7 @@ defmodule Togglex.Api.Workspaces do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-workspace-users
   """
-  @spec users(Client.t, integer | binary, [{atom, binary}] | []) :: Togglex.Response
+  @spec users(Client.t, integer | binary, [{atom, binary}] | []) :: Togglex.response
   def users(client, workspace_id, params \\ []) do
     get("workspaces/#{workspace_id}/users", client, params)
   end
@@ -79,7 +79,7 @@ defmodule Togglex.Api.Workspaces do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-workspace-clients
   """
-  @spec clients(Client.t, integer | binary, [{atom, binary}] | []) :: Togglex.Response
+  @spec clients(Client.t, integer | binary, [{atom, binary}] | []) :: Togglex.response
   def clients(client, workspace_id, params \\ []) do
     get("workspaces/#{workspace_id}/clients", client, params)
   end
@@ -94,7 +94,7 @@ defmodule Togglex.Api.Workspaces do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-workspace-projects
   """
-  @spec projects(Client.t, integer | binary, [{atom, binary}] | []) :: Togglex.Response
+  @spec projects(Client.t, integer | binary, [{atom, binary}] | []) :: Togglex.response
   def projects(client, workspace_id, params \\ []) do
     get("workspaces/#{workspace_id}/projects", client, params)
   end
@@ -108,7 +108,7 @@ defmodule Togglex.Api.Workspaces do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-workspace-tags
   """
-  @spec tags(Client.t, integer | binary) :: Togglex.Response
+  @spec tags(Client.t, integer | binary) :: Togglex.response
   def tags(client, workspace_id) do
     get("workspaces/#{workspace_id}/tags", client, [])
   end
@@ -128,7 +128,7 @@ defmodule Togglex.Api.Workspaces do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-workspace-tags
   """
-  @spec tasks(Client.t, integer | binary, [{atom, binary}]) :: Togglex.Response
+  @spec tasks(Client.t, integer | binary, [{atom, binary}]) :: Togglex.response
   def tasks(client, workspace_id, params \\ []) do
     get("workspaces/#{workspace_id}/tasks", client, params)
   end
