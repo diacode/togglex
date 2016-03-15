@@ -45,7 +45,7 @@ defmodule Togglex.Mixfile do
       {:poison, "~> 2.1.0"},
       {:httpoison, "~> 0.8.1"},
       {:ex_doc, "~> 0.11.4"},
-      {:inch_ex, "0.5.1"},
+      {:inch_ex, "0.5.1", only: :docs},
       {:excoveralls, "~> 0.5.1", only: :test},
       {:exvcr, "~> 0.7.1", only: :test},
       {:meck, "~> 0.8.4", only: :test }
@@ -56,7 +56,7 @@ defmodule Togglex.Mixfile do
     [
       maintainers: ["hopsor"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/hopsor/togglex"}
+      links: %{"GitHub" => "https://github.com/diacode/togglex"}
     ]
   end
 

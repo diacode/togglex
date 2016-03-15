@@ -3,7 +3,7 @@ elixir:
   - 1.2.0
 notifications:
   recipients:
-    - hopsor@gmail.com
+    - victor@diacode.com
 otp_release:
   - 18.2
 env:
