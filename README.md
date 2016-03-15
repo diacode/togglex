@@ -11,13 +11,13 @@ Heavily based on [ExTracker](https://github.com/dashofcode/extracker) and
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+The package can be installed as:
 
 1. Add togglex to your list of dependencies in `mix.exs`:
 
   ```elixir
   def deps do
-    [{:togglex, "~> 0.0.1"}]
+    [{:togglex, "~> 0.1.0"}]
   end
   ```
 
