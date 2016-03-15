@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/diacode/togglex.svg?branch=master)](https://travis-ci.org/diacode/togglex)
 [![Inline docs](http://inch-ci.org/github/diacode/togglex.svg)](http://inch-ci.org/github/diacode/togglex)
 
 # Togglex
