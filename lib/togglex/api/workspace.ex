@@ -31,6 +31,30 @@ defmodule Togglex.Api.Workspace do
   end
 
   @doc """
+    Updates attributes from a given workspace.
+
+    Workspace data example:
+
+    ```
+    %{
+      name: "New workspace name",
+      default_currency: "EUR",
+      default_hourly_rate: 50
+    }
+    ```
+
+    ## Example
+
+      Togglex.Api.Workspace.update(client, "111111", workspace_data})
+
+    More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#update-workspace
+  """
+  @spec update(Client.t, integer | binary, map) :: Togglex.Response
+  def update(client, workspace_id, workspace_data) do
+    put("workspaces/#{workspace_id}", client, %{workspace: workspace_data})
+  end
+
+  @doc """
   Returns all users contained in a specific workspace. To get a successful
   response, the token owner must be workspace admin
 

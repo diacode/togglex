@@ -99,7 +99,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   * [x] get workspace projects
   * [x] get workspace tasks
   * [x] get workspace tags
-  * [ ] update workspace
+  * [x] update workspace
 
 * Workspace users
   * [ ] invite users to workspace
