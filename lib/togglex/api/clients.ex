@@ -49,12 +49,12 @@ defmodule Togglex.Api.Clients do
 
   ## Example
 
-    Togglex.Api.Clients.client(api_http_client, "111111")
+    Togglex.Api.Clients.find(api_http_client, "111111")
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#get-client-details
   """
-  @spec client(Client.t, integer | binary) :: Togglex.Response
-  def client(http_client, client_id) do
+  @spec find(Client.t, integer | binary) :: Togglex.Response
+  def find(http_client, client_id) do
     get("clients/#{client_id}", http_client, [])
   end
 
@@ -64,13 +64,13 @@ defmodule Togglex.Api.Clients do
 
   ## Example
 
-    Togglex.Api.Clients.clients(api_http_client)
+    Togglex.Api.Clients.list(api_http_client)
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/clients.md#get-clients-visible-to-user
   """
-  @spec clients(Client.t) :: Togglex.Response
-  def clients(http_client) do
-    get("clients", http_client, [])
+  @spec list(Client.t) :: Togglex.Response
+  def list(http_client) do
+    get("clients", http_client)
   end
 
   @doc """

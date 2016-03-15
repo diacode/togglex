@@ -84,12 +84,12 @@ defmodule Togglex.Api.TimeEntries do
 
     ## Example
 
-      Togglex.Api.TimeEntries.time_entry(client, "111111")
+      Togglex.Api.TimeEntries.find(client, "111111")
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#get-time-entry-details
   """
-  @spec time_entry(Client.t, integer | binary) :: Togglex.Response
-  def time_entry(client, time_entry_id) do
+  @spec find(Client.t, integer | binary) :: Togglex.Response
+  def find(client, time_entry_id) do
     get("time_entries/#{time_entry_id}", client)
   end
 
@@ -124,12 +124,12 @@ defmodule Togglex.Api.TimeEntries do
 
     ## Example
 
-      Togglex.TimeEntry.time_entries(client, [start_date: "2016-01-01T12:30:30+00:00", end_date: "2016-03-15T12:30:30+00:00")
+      Togglex.TimeEntry.list(client, [start_date: "2016-01-01T12:30:30+00:00", end_date: "2016-03-15T12:30:30+00:00")
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/time_entries.md#get-time-entries-started-in-a-specific-time-range
   """
-  @spec time_entries(Client.t, [{atom, binary}]) :: Togglex.Reponse
-  def time_entries(client, params \\ []) do
+  @spec list(Client.t, [{atom, binary}]) :: Togglex.Reponse
+  def list(client, params \\ []) do
     get("time_entries", client, params)
   end
 

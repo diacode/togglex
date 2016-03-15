@@ -56,12 +56,12 @@ defmodule Togglex.Api.Tasks do
 
     ## Example
 
-      Togglex.Api.Tasks.task(client, "111111")
+      Togglex.Api.Tasks.find(client, "111111")
 
     More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/tasks.md#get-task-details
   """
-  @spec task(Client.t, integer | binary) :: Togglex.Response
-  def task(client, task_id) do
+  @spec find(Client.t, integer | binary) :: Togglex.Response
+  def find(client, task_id) do
     get("tasks/#{task_id}", client)
   end
 

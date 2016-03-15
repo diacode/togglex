@@ -7,12 +7,12 @@ defmodule Togglex.Api.Workspaces do
 
   ## Example
 
-    Togglex.Api.Workspaces.workspaces(client)
+    Togglex.Api.Workspaces.list(client)
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-workspaces
   """
-  @spec workspaces(Client.t) :: Togglex.Response
-  def workspaces(client) do
+  @spec list(Client.t) :: Togglex.Response
+  def list(client) do
     get("workspaces", client, [])
   end
 
@@ -21,12 +21,12 @@ defmodule Togglex.Api.Workspaces do
 
   ## Example
 
-    Togglex.Api.Workspaces.workspace(client, 123456)
+    Togglex.Api.Workspaces.find(client, 123456)
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/workspaces.md#get-single-workspace
   """
-  @spec workspace(Client.t, integer | binary) :: Togglex.Response
-  def workspace(client, workspace_id) do
+  @spec find(Client.t, integer | binary) :: Togglex.Response
+  def find(client, workspace_id) do
     get("workspaces/#{workspace_id}", client, [])
   end
 

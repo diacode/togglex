@@ -49,12 +49,12 @@ defmodule Togglex.Api.Projects do
 
   ## Example
 
-    Togglex.Api.Projects.project(client, "111111")
+    Togglex.Api.Projects.find(client, "111111")
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/chapters/projects.md#get-project-data
   """
-  @spec project(Client.t, integer | binary) :: Togglex.Response
-  def project(client, project_id) do
+  @spec find(Client.t, integer | binary) :: Togglex.Response
+  def find(client, project_id) do
     get("projects/#{project_id}", client)
   end
 
