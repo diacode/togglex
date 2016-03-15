@@ -4,7 +4,7 @@ defmodule Togglex.Mixfile do
   def project do
     [
       app: :togglex,
-      version: "0.0.1",
+      version: "0.1.0",
       elixir: "~> 1.2",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
@@ -56,7 +56,7 @@ defmodule Togglex.Mixfile do
 
   defp package do
     [
-      maintainers: ["hopsor"],
+      maintainers: ["Victor Viruete"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/diacode/togglex"}
     ]
