@@ -67,10 +67,10 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   * [x] delete a tag
 
 * Tasks (available only for pro workspaces)
-  * [ ] create a task
-  * [ ] get task details
-  * [ ] update a task
-  * [ ] delete a task
+  * [x] create a task
+  * [x] get task details
+  * [x] update a task
+  * [x] delete a task
   * [ ] update multiple tasks
   * [ ] delete multiple tasks
 
