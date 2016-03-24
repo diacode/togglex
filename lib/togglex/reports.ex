@@ -16,9 +16,9 @@ defmodule Togglex.Reports do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/reports/weekly.md
   """
-  @spec weekly(Client.t, [{atom, binary}] | []) :: Togglex.response
-  def weekly(client, params \\ []) do
-    get("weekly", client, params)
+  @spec weekly(Client.t, [{atom, binary}] | [], atom) :: Togglex.response
+  def weekly(client, params \\ [], format \\ :json) do
+    get("weekly" <> extension(format), client, params)
   end
 
   @doc """
@@ -31,9 +31,9 @@ defmodule Togglex.Reports do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/reports/detailed.md
   """
-  @spec detailed(Client.t, [{atom, binary}] | []) :: Togglex.response
-  def detailed(client, params \\ []) do
-    get("details", client, params)
+  @spec detailed(Client.t, [{atom, binary}] | [], atom) :: Togglex.response
+  def detailed(client, params \\ [], format \\ :json) do
+    get("details" <> extension(format), client, params)
   end
 
   @doc """
@@ -45,9 +45,9 @@ defmodule Togglex.Reports do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/reports/summary.md
   """
-  @spec summary(Client.t, [{atom, binary}] | []) :: Togglex.response
-  def summary(client, params \\ []) do
-    get("summary", client, params)
+  @spec summary(Client.t, [{atom, binary}] | [], atom) :: Togglex.response
+  def summary(client, params \\ [], format \\ :json) do
+    get("summary" <> extension(format), client, params)
   end
 
   @doc """
@@ -60,8 +60,11 @@ defmodule Togglex.Reports do
 
   More info at: https://github.com/toggl/toggl_api_docs/blob/master/reports/project.md
   """
-  @spec project(Client.t, [{atom, binary}] | []) :: Togglex.response
-  def project(client, params \\ []) do
-    get("project", client, params)
+  @spec project(Client.t, [{atom, binary}] | [], atom) :: Togglex.response
+  def project(client, params \\ [], format \\ :json) do
+    get("project" <> extension(format), client, params)
   end
+
+  @spec extension(atom) :: binary
+  defp extension(format), do: "." <> to_string(format)
 end

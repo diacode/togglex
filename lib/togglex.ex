@@ -8,13 +8,23 @@ defmodule Togglex do
   """
 
   @user_agent [{"User-agent", "togglex"}]
-  @type response :: nil | {integer, any} | Poison.Parser.t
+  @type response :: nil | binary | Poison.Parser.t
 
   @spec process_response(HTTPoison.Response.t) :: response
-  def process_response(%HTTPoison.Response{status_code: 200, body: ""}), do: nil
-  def process_response(%HTTPoison.Response{status_code: 200, body: body}), do: Poison.decode!(body, keys: :atoms)
-  def process_response(%HTTPoison.Response{status_code: status_code, body: ""}), do: { status_code, nil }
-  def process_response(%HTTPoison.Response{status_code: status_code, body: body }), do: { status_code, Poison.decode!(body, keys: :atoms) }
+  # def process_response(%HTTPoison.Response{status_code: 200, body: ""}), do: nil
+  # def process_response(%HTTPoison.Response{status_code: 200, body: body, headers: headers}) when is_json_response(headers), do: Poison.decode!(body, keys: :atoms)
+  # def process_response(%HTTPoison.Response{status_code: 200, body: body, headers: headers}) when is_pdf_response(headers), do: body
+  # def process_response(%HTTPoison.Response{status_code: status_code, body: ""}), do: { status_code, nil }
+  # def process_response(%HTTPoison.Response{status_code: status_code, body: body }), do: { status_code, Poison.decode!(body, keys: :atoms) }
+
+
+  def process_response(response) do
+    cond do
+      is_json_response(response) -> Poison.decode!(response.body, keys: :atoms)
+      is_pdf_response(response) -> response.body
+      true -> nil
+    end
+  end
 
   @spec post(binary, Client.t, binary) :: response
   def post(path, client, body \\ "") do
@@ -64,4 +74,12 @@ defmodule Togglex do
   @spec build_qs([{atom, binary}]) :: binary
   defp build_qs([]), do: ""
   defp build_qs(kvs), do: to_string('?' ++ URI.encode_query(kvs))
+
+  defp is_json_response(response) do
+    Enum.member?(response.headers, {"Content-Type", "application/json"})
+  end
+
+  defp is_pdf_response(response) do
+    Enum.member?(response.headers, {"Content-Type", "application/pdf"})
+  end
 end
