@@ -76,10 +76,14 @@ defmodule Togglex do
   defp build_qs(kvs), do: to_string('?' ++ URI.encode_query(kvs))
 
   defp is_json_response(response) do
-    Enum.member?(response.headers, {"Content-Type", "application/json"})
+    Enum.find(response.headers, fn(x) -> elem(x, 0) == "Content-Type" end)
+    |> elem(1)
+    |> String.contains? "application/json"
   end
 
   defp is_pdf_response(response) do
-    Enum.member?(response.headers, {"Content-Type", "application/pdf"})
+    Enum.find(response.headers, fn(x) -> elem(x, 0) == "Content-Type" end)
+    |> elem(1)
+    |> String.contains? "application/pdf"
   end
 end
