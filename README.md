@@ -72,6 +72,17 @@ Getting a summarized report based on some parameters:
 Togglex.Reports.summary(client, %{workspace_id: "YOUR_WORKSPACE_ID", project_ids: "COMMA_SEPARATED_PROJECT_IDS"})
 ```
 
+#### PDF Reports
+
+Toggl allows you to retrieve reports in PDF format. To do that you only need to
+call a report function passing `:pdf` atom as last parameter. The value returned
+is a binary you can use to write a file:
+
+```elixir
+pdf = Togglex.Reports.summary(client, %{workspace_id: "YOUR_WORKSPACE_ID", project_ids: "COMMA_SEPARATED_PROJECT_IDS"}, :pdf)
+File.write!(path, pdf)
+```
+
 Check out in the next section which API calls are already implemented in this
 wrapper.
 
