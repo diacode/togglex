@@ -3,7 +3,14 @@ defmodule Togglex.Reports do
   alias Togglex.Client
 
   @moduledoc """
-  Provides some functions to get Toggl reports.
+  Provides some functions to get Toggl reports. By default all methods return
+  json data. If you want to retrieve the data in pdf use :pdf atom as last
+  function parameter. In that case the response will be a binary you can use to
+  write a File.
+
+    pdf_response = Togglex.Reports.weekly(client, params, :pdf)
+    File.write!(file_path, pdf_response)
+    
   """
 
   @doc """
