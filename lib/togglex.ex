@@ -78,12 +78,12 @@ defmodule Togglex do
   defp is_json_response(response) do
     Enum.find(response.headers, fn(x) -> elem(x, 0) == "Content-Type" end)
     |> elem(1)
-    |> String.contains? "application/json"
+    |> String.contains?("application/json")
   end
 
   defp is_pdf_response(response) do
     Enum.find(response.headers, fn(x) -> elem(x, 0) == "Content-Type" end)
     |> elem(1)
-    |> String.contains? "application/pdf"
+    |> String.contains?("application/pdf")
   end
 end
